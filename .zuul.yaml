@@ -34,9 +34,9 @@
       sonobouy_mode: quick
 
 - job:
-    name: k8s-cluster-api-provider-e2e-conformance-daily
+    name: k8s-cluster-api-provider-e2e-conformance-daily-r5
     parent: k8s-cluster-api-provider-e2e-abstract
-    branches: main
+    branches: release/v6.0.0
     description: |
       Run **daily** e2e tests of k8s-cluster-api-provider project using
       [sonobuoy](https://sonobuoy.io/) with mode conformance meaning
@@ -44,7 +44,20 @@
     timeout: 10800  # 3h
     vars:
       sonobouy_mode: conformance
-      git_reference: v6.0.0
+      git_reference: release/v6.0.0
+
+- job:
+    name: k8s-cluster-api-provider-e2e-conformance-daily-latest
+    parent: k8s-cluster-api-provider-e2e-abstract
+    branches: main
+    description: |
+      Run **daily** e2e tests for the latest version of k8s-cluster-api-provider project using
+      [sonobuoy](https://sonobuoy.io/) with mode conformance meaning
+      it will test if the Kubernetes cluster is conformant to the CNCF.
+    timeout: 10800  # 3h
+    vars:
+      sonobouy_mode: conformance
+      git_reference: main
 
 - project:
     name: SovereignCloudStack/k8s-cluster-api-provider
@@ -64,4 +77,5 @@
         - noop
     periodic-daily:
       jobs:
-      - k8s-cluster-api-provider-e2e-conformance-daily
+      - k8s-cluster-api-provider-e2e-conformance-daily-r5
+      - k8s-cluster-api-provider-e2e-conformance-daily-latest
