@@ -61,7 +61,7 @@
       git_reference: main
 
 - project:
-    name: matofederorg/k8s-cluster-api-provider
+    name: matofederorg/k8s-cluster-api-provider-renovate
     default-branch: main
     merge-mode: "squash-merge"
     e2e-test:
