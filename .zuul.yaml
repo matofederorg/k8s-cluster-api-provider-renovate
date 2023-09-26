@@ -1,6 +1,6 @@
 - job:
-  name: renovate
-  run: playbooks/renovate.yaml
+    name: renovate
+    run: playbooks/renovate.yaml
 - project:
     name: matofederorg/k8s-cluster-api-provider-renovate
     default-branch: main
