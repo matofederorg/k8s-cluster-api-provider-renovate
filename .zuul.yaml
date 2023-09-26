@@ -1,4 +1,10 @@
+- job:
+  name: renovate
+  run: playbooks/renovate.yaml
 - project:
     name: matofederorg/k8s-cluster-api-provider-renovate
     default-branch: main
     merge-mode: "squash-merge"
+    this-is-my-pipeline-name:
+      jobs:
+        - renovate
