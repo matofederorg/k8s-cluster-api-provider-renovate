@@ -1,10 +1,11 @@
-- job:
-    name: renovate
-    run: playbooks/renovate.yaml
-- project:
-    name: matofederorg/k8s-cluster-api-provider-renovate
-    default-branch: main
-    merge-mode: "squash-merge"
-    periodic-10min:
-      jobs:
-        - renovate
+# @mfeder disables this one, temporarily 
+#- job:
+#    name: renovate
+#    run: playbooks/renovate.yaml
+#- project:
+#    name: matofederorg/k8s-cluster-api-provider-renovate
+#    default-branch: main
+#    merge-mode: "squash-merge"
+#    periodic-10min:
+#      jobs:
+#        - renovate
